@@ -1,0 +1,122 @@
+/* WhatsAppChat.css */
+
+@keyframes slideIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes slideOut {
+    from {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    to {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+  }
+  
+  .whatsapp-chat-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+  
+  .whatsapp-button {
+    background-color: #25d366;
+    border-radius: 50%;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+  
+  .whatsapp-button:hover {
+    transform: scale(1.1);
+  }
+  
+  .whatsapp-button img {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .chat-popup {
+    position: relative;
+    width: 320px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background-color: #f4f4f8;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    font-family: Arial, sans-serif;
+    animation: slideIn 0.3s ease forwards;
+  }
+  
+  .chat-popup.closed {
+    animation: slideOut 0.3s ease forwards;
+  }
+  
+  .chat-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #25d366;
+    color: white;
+    padding: 15px;
+    font-size: 16px;
+    font-weight: bold;
+  }
+  
+  .close-button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+  }
+  
+  .chat-body {
+    padding: 15px;
+    background-color: #ffffff;
+    color: #333;
+    font-size: 14px;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    max-height: 200px;
+    overflow-y: auto;
+  }
+  
+  .chat-footer {
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    background-color: #f0f0f0;
+  }
+  
+  .send-button {
+    background-color: #25d366;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+  }
+  
+  .send-button:hover {
+    background-color: #1eb056;
+  }
+  
