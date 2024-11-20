@@ -1,10 +1,12 @@
-import { Container, Row, Col, Tab, Nav } from "react-bootstrap";
+import { Container, Row, Col, Tab, Nav, Card } from "react-bootstrap";
 import desarrollo_software from "../assets/img/desarrollo_software.jpg";
 import consultoria_software from "../assets/img/consultoria_software.jpg";
 import mantenimiento_soporte from "../assets/img/mantenimiento_soporte.jpg";
 import integracion_sistemas from "../assets/img/integracion_sistemas.jpg";
 import desarrollo_movil from "../assets/img/desarrollo_movil.png";
 import alexaskill from "../assets/img/alexa-skill.jpg";
+import maquina from "../assets/img/vending-machine.jpg";
+import taskmanager from "../assets/img/task-manager.jpg";
 import QR from "../assets/img/QR.png";
 import colorSharp2 from "../assets/img/color-sharp2.png";
 import 'animate.css';
@@ -69,19 +71,19 @@ export const Projects = () => {
 
   const files = [
     {
-      title: "📄 Documento Técnico",
-      description: "Guía técnica detallada sobre nuestros servicios y proyectos.",
+      title: "💡 Skill de Alexa para Consulta de Alumnos para la empresa Eficaz Digital",
+      description: "Desarrollamos un modelo de habilidad de Alexa utilizando Alexa Developer Console y Amazon Web Services. Esta habilidad se conecta con la API de la empresa Cura para que los profesores puedan consultar información sobre los alumnos a través de Alexa y facilitar la comunicación con los padres.",
       imgUrl: alexaskill,
     },
     {
-      title: "📊 Reporte Anual",
-      description: "Resumen de nuestro impacto y logros del último año.",
-      imgUrl: consultoria_software,
+      title: "🛒 Máquina Expendedora con Inventario Móvil",
+      description: "Implementamos una máquina expendedora conectada a una aplicación móvil, la cual permite gestionar el inventario de los productos de manera eficiente y en tiempo real",
+      imgUrl: maquina,
     },
     {
-      title: "📝 Manual de Usuario",
-      description: "Documentación completa para el uso de nuestras soluciones.",
-      imgUrl: mantenimiento_soporte,
+      title: "📋 Aplicación de Asignador de Tareas para GeoDigital",
+      description: "Desarrollamos una aplicación que asigna y gestiona tareas dentro de la empresa GeoDigital, optimizando la distribución de trabajo y el seguimiento de proyectos.",
+      imgUrl: taskmanager,
     },
   ];
 
@@ -97,16 +99,7 @@ export const Projects = () => {
                     isVisible ? "animate__animated animate__fadeIn" : ""
                   }
                 >
-                  <h2>Projects</h2>
-                  <p>
-                    En Dev Course, nos enorgullece haber trabajado en proyectos
-                    innovadores y desafiantes, proporcionando soluciones
-                    tecnológicas que impactan de manera positiva en diversos
-                    sectores. Desde la implementación de asistentes virtuales
-                    hasta el desarrollo de sistemas de gestión, cada proyecto
-                    refleja nuestro compromiso con la calidad, eficiencia y
-                    satisfacción del cliente.
-                  </p>
+                  <h2>Servicios & Archivo</h2>
                   <Tab.Container id="projects-tabs" defaultActiveKey="first">
                     <Nav
                       variant="pills"
@@ -131,27 +124,59 @@ export const Projects = () => {
                     >
                       {/* Servicios */}
                       <Tab.Pane eventKey="first">
+                        <p>En Dev Course transformamos ideas en soluciones innovadoras.
+                          Ofrecemos servicios de desarrollo de software a medida con la más alta calidad y eficiencia. Ya sea que necesites una aplicación móvil, un sistema web o una integración tecnológica, nuestro equipo está listo para llevar tu proyecto al siguiente nivel.</p>
                         <Row>
                           {projects.map((project, index) => (
                             <ProjectCard key={index} {...project} />
                           ))}
                         </Row>
                       </Tab.Pane>
+{/* Archivos */}
+<Tab.Pane eventKey="second">
+  <p>
+    En Dev Course, nos enorgullece haber trabajado en proyectos innovadores y desafiantes, proporcionando soluciones tecnológicas que impactan de manera positiva en diversos sectores. Cada archivo refleja nuestro compromiso con la calidad, eficiencia y satisfacción del cliente.
+  </p>
+  <Row>
+    {files.map((file, index) => (
+      <Col md={4} sm={12} className="mb-4 file-card" key={index}>
+        <Card style={{ width: '100%' }} className="h-100 d-flex flex-column">
+          <Card.Body className="d-flex flex-column">
+            {/* Título y Descripción */}
+            <Card.Title>{file.title}</Card.Title>
+            <Card.Text>{file.description}</Card.Text>
+          </Card.Body>
+          {/* Imagen debajo del texto */}
+          <Card.Img
+            variant="bottom"
+            src={file.imgUrl}
+            alt={file.title}
+            style={{
+              width: '100%', // Ajusta el tamaño de la imagen al contenedor
+              height: 'auto', // Mantiene la proporción sin recortar
+              objectFit: 'contain', // Asegura que la imagen no se recorte
+              marginTop: '10px', // Espacio entre la imagen y el texto
+              marginBottom: '10px', // Espacio entre la imagen y el borde inferior
+              padding: '0 10px', // Evita que la imagen toque los márgenes
+              borderRadius: '8px', // Bordes redondeados para la imagen
+              boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)', // Sombra para resaltar la imagen
+              alignSelf: 'center', // Asegura que la imagen esté centrada
+              maxHeight: '250px', // Asegura que la imagen no sea más grande que este valor
+              objectFit: 'cover' // Asegura que la imagen se ajuste a este espacio sin distorsionarse
+            }}
+          />
+        </Card>
+      </Col>
+    ))}
+  </Row>
+</Tab.Pane>
 
-                      {/* Archivos */}
-                      <Tab.Pane eventKey="second">
-                        <p> </p>
-                        <Row>
-                          {files.map((file, index) => (
-                            <FileCard key={index} {...file} />
-                          ))}
-                        </Row>
-                      </Tab.Pane>
+
+
 
                       {/* Tab 3 */}
                       <Tab.Pane eventKey="third">
-                        <p>Tab 3 contenido </p>
-      
+                        <p>Tab 3 contenido</p>
                       </Tab.Pane>
                     </Tab.Content>
                   </Tab.Container>

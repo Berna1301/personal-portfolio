@@ -32,3 +32,69 @@
     }
   }
   
+  .file-card .card {
+    border: 2px solid #013440; /* Borde verde oscuro */
+    background-color: #56BFBF; /* Fondo turquesa */
+    border-radius: 10px; /* Esquinas redondeadas */
+    transition: transform 0.3s, box-shadow 0.3s; /* Animación suave */
+    height: auto; /* Altura dinámica basada en el contenido */
+    display: flex; /* Habilitar Flexbox */
+    flex-direction: column; /* Alinear contenido en columna */
+}
+
+.file-card .card:hover {
+    transform: scale(1.05); /* Efecto de aumento */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Sombra en hover */
+}
+
+.file-card .card-img-top {
+    width: 80%; /* Imagen ocupa el 80% del ancho del contenedor */
+    max-width: 200px; /* Tamaño máximo para evitar que sean demasiado grandes */
+    margin: 10px auto; /* Centra la imagen y da un margen */
+    border-radius: 10px; /* Esquinas redondeadas */
+}
+
+.file-card .card-body {
+    flex-grow: 1; /* Permite que el contenido textual se expanda */
+    padding: 15px; /* Espaciado interno */
+    display: flex; /* Habilitar Flexbox */
+    flex-direction: column; /* Contenido en columna */
+    justify-content: flex-start; /* Alinea los elementos al inicio */
+    align-items: stretch; /* Asegura que el contenido ocupe todo el ancho */
+    gap: 10px; /* Espaciado uniforme entre elementos */
+}
+
+.file-card .card .card-title {
+    color: #013440; /* Título verde oscuro */
+    font-weight: bold; /* Resalta el título */
+    font-size: 1rem; /* Tamaño del título ajustado */
+    text-align: center; /* Centra el texto */
+    margin: 5px 0; /* Espaciado más reducido */
+}
+
+.file-card .card .card-text {
+    color: #000000; /* Texto negro */
+    text-align: justify; /* Justifica el texto */
+    font-size: 0.9rem; /* Tamaño de fuente ajustado */
+    line-height: 1.5; /* Espaciado entre líneas */
+    margin: 0; /* Elimina márgenes adicionales */
+    width: 100%; /* Asegura que el texto ocupe todo el ancho disponible */
+}
+
+/* Estilo para pantallas pequeñas */
+@media (max-width: 768px) {
+    .file-card .card-img-top {
+        width: 60%; /* Imagen ocupa menos espacio en pantallas pequeñas */
+        max-width: 150px; /* Tamaño máximo reducido */
+    }
+    .file-card .card-body {
+        gap: 8px; /* Espaciado más compacto entre los elementos */
+    }
+}
+.file-card .card-img-top {
+  width: 100%; /* Ajusta al ancho del contenedor */
+  height: auto; /* Mantiene proporciones */
+  object-fit: contain; /* Asegura que la imagen no se recorte */
+  border-radius: 5px; /* Esquinas redondeadas opcionales */
+  margin-bottom: 10px; /* Espaciado inferior */
+}
