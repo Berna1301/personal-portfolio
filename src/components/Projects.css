@@ -1,0 +1,34 @@
+.newsletter-bx {
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  .QR {
+    width: 300px; /* Ajusta el tamaño de la imagen */
+    height: auto;
+    display: block; /* Hace que la imagen sea un bloque */
+    margin: 0 auto; /* Centra la imagen */
+  }
+  
+  h3 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+  }
+  
+  @media (max-width: 768px) {
+    .newsletter-bx {
+      text-align: center;
+    }
+  
+    .QR {
+      width: 120px; /* Ajusta el tamaño en pantallas más pequeñas */
+    }
+  
+    h3 {
+      font-size: 1.5rem;
+    }
+  }
+  
