@@ -68,7 +68,7 @@ export const NavBar = () => {
                 }
                 onClick={() => onUpdateActiveLink("projects")}
               >
-                Proyectos
+                Servicios & Archivo
               </Nav.Link>
               <Nav.Link
                 href="#newsletter"
